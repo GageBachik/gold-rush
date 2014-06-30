@@ -1,25 +1,12 @@
-/*Base*/
-
-/*Base*/
-
-/*Map*/
-
-.container{
-	position: relative;
+html{
+	height: 100%;
 }
 
-.map{
+body{
+	height: 100%;
 }
 
-/*Map*/
-
-/*marker*/
-
-.marker{
-	padding: 10px;
+.container, #map{
+	width: 100%;
+	height: 100%;
 }
-
-.marker:hover{
-
-}
-/*marker*/
