@@ -1,4 +1,6 @@
-$(document).mousemove(function(e) {
+$(function(){
+
+/*$(document).mousemove(function(e) {
     var percentY = e.clientY / $(window).height();
     var percentX = e.clientX / $(window).width();
     $('body, html').scrollTop($(document).height() * percentY);
@@ -27,4 +29,29 @@ $(document).on('click', '.marker', function(event){
 	event.preventDefault();
 	event.stopPropagation();
 	$(this).remove();
+});
+*/
+
+var map = new GMaps({
+  div: '#map',
+  lat: 40.7531939,
+  lng: -105.9040918,
+  zoom: 11,
+  height: '100%',
+  click: function(event){
+  	var title = prompt('Add a note') || '';
+  	var lat = event.latLng.k;
+  	var lon = event.latLng.A;
+  	// console.log(lat, lon, event.latLng);
+  	map.addMarker({
+	  lat: lat,
+	  lng: lon,
+	  title: title,
+	  click: function(event){
+	  	this.setMap(null);
+	  }
+	});
+  }
+});
+
 });
